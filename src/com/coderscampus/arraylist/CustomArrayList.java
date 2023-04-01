@@ -61,7 +61,7 @@ public class CustomArrayList<T> implements CustomList<T>{
 			throw new IndexOutOfBoundsException("Index " + index + " is out of bounds!");
 		}
 		T indexItem = (T) items[index];
-		for(int i = index; i <= size; i++) {
+		for(int i = index; i < size - 1; i++) {
 			items[i] = items[i+1];
 		}
 		size--;

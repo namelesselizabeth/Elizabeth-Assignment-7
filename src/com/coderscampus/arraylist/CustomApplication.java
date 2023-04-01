@@ -5,9 +5,17 @@ public class CustomApplication {
 	public static void main(String[] args) {
 		CustomList<String> myCustomList = new CustomArrayList<>();
 		
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			myCustomList.add("element " + i);
 		}
+		
+		for(int i = 0; i < myCustomList.getSize(); i++) {
+			System.out.print(myCustomList.get(i) + " ");
+		}
+		
+		System.out.println("\n" + myCustomList.getSize());
+		
+		myCustomList.remove(9);
 		
 		for(int i = 0; i < myCustomList.getSize(); i++) {
 			System.out.print(myCustomList.get(i) + " ");
@@ -21,6 +29,7 @@ public class CustomApplication {
 			System.out.println(myCustomList.get(i));
 		}
 		
+		//Throws Exception Check
 		System.out.println(myCustomList.get(20));
 	}
 
