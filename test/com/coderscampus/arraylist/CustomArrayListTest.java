@@ -18,12 +18,15 @@ class CustomArrayListTest {
 		//Arrange
 		CustomList<Integer> numberList = new CustomArrayList<>();
 		///Act
-		for(int i = 0; i <= 10; i++) {
+		for(int i = 0; i < 10; i++) {
 			numberList.add(i);
 		}
 		
 		numberList.add(1, 15);
+		//numberList.add(1000);
 		//Assert
+		
+
 		assertEquals(0, numberList.get(0));
 		assertEquals(1, numberList.get(2));
 		assertEquals(15, numberList.get(1));
@@ -35,15 +38,17 @@ class CustomArrayListTest {
 		//Arrange
 		CustomList<Integer> numberList = new CustomArrayList<>();
 		//Act
-		for(int i = 0; i <=  10; i++) {
+		for(int i = 0; i <  10; i++) {
 			numberList.add(i);
 		}
 		// 0 = 0; 1 = 1; 2 = 2; 3= 3; 4 = 4;
-		Integer numberRemoved = numberList.remove(3);
-		
+		//Integer numberRemoved = numberList.remove(3);
+		numberList.remove(9); //0, 1, 2, 3, 4, 5, 6, 7, 8, null
+		numberList.remove(7); //0, 1, 2, 3, 4, 5, 6, 8, null, null
+		numberList.add(1000); //0, 1, 2, 3, 4, 5, 6, 8, 1000, null
 		
 		//Assert
-		assertEquals(3, numberRemoved);
+		//assertEquals(3, numberRemoved);
 		assertEquals(5, numberList.get(4));
 		assertEquals(10, numberList.getSize());
 		

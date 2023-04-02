@@ -48,7 +48,7 @@ public class CustomArrayList<T> implements CustomList<T>{
 	@SuppressWarnings("unchecked")
 	@Override
 	public T get(int index) {
-		if(index > size || index < 0) {
+		if(index >= size || index < 0) {
 			throw new IndexOutOfBoundsException("Index " + index + " is out of bounds!");
 		}
 		return (T) items[index];
@@ -61,10 +61,14 @@ public class CustomArrayList<T> implements CustomList<T>{
 			throw new IndexOutOfBoundsException("Index " + index + " is out of bounds!");
 		}
 		T indexItem = (T) items[index];
-		for(int i = index; i < size - 1; i++) {
-			items[i] = items[i+1];
+		
+		for(int i = index; i < size - 1 ; i++) {
+			items[i] = items[i + 1];
 		}
+		
+		items[size - 1] = null;
 		size--;
+		
 		return indexItem;
 	}
 
